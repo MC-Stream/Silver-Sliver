@@ -16,7 +16,7 @@ We will be comparing the baseline algorithm with a modification to this algorith
   
 As we can see, the original has an accuracy of about 55%. This is not bad, but could possibly be improved on.
 
-![Baseline Plot](Plots/SMV-Plot.png) 
+![Baseline Plot](Plots/SVM-Plot.png) 
 
 Viewing this plot we can see how the algorithm performed when tested against the actual returns. It stays about the same for a good portion, but does begin to out perform the actual returns, showing that it does possess potential to make money.
 
@@ -27,7 +27,7 @@ For this one, the SMA was moved to 50 and 200 days to see if more data might per
   
 Extending the window dropped the accuracy to 49% unfortunately. So this does not seem to have helped the algorithm, though the precision did improve.
 
-   ![Adjusted Plot](Plots/SMV-Plot-Adjusted.png) 
+   ![Adjusted Plot](Plots/SVM-Plot-Adjusted.png) 
 
 Upon checking the plot though, we can see that it did not perform well at all and took a bit of time to recover. It does end in the positive, but it took it a while to get there. It does appear that it did it's best recovery when the market went down, which might mean this strategy can be used to mitigate risk for when the market might be sloping downward.
 
