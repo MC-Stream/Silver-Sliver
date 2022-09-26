@@ -1,13 +1,3 @@
-
-
-2. Tune the trading algorithm by adjusting the SMA input features. Adjust one or both of the windows for the algorithm. Rerun the notebook with the updated parameters, and record the results in your `README.md` file. Answer the following question: What impact resulted from increasing or decreasing either or both of the SMA windows?
-
-3. Choose the set of parameters that best improved the trading algorithm returns. Save a PNG image of the cumulative product of the actual returns vs. the strategy returns, and document your conclusion in your `README.md` file.
-
-3. Backtest the new model to evaluate its performance. Save a PNG image of the cumulative product of the actual returns vs. the strategy returns for this updated trading algorithm, and write your conclusions in your `README.md` file. Answer the following questions: Did this new model perform better or worse than the provided baseline model? Did this new model perform better or worse than your tuned trading algorithm?
-
-In the previous sections, you updated your `README.md` file with your conclusions. To accomplish this section, you need to add a summary evaluation report at the end of the `README.md` file. For this report, express your final conclusions and analysis. Support your findings by using the PNG images that you created.
-
 # Machine Learning Trading Bot Report
 
 ## Overview of the Analysis
@@ -33,19 +23,27 @@ Viewing this plot we can see how the algorithm performed when tested against the
 * Adjusted Algorithm
 For this one, the SMA was moved to 50 and 200 days to see if more data might perform better. With the increased SMAs the training data was increased to see how this would play out over a longer time period.
 
-![Baseline Report](Reports/Adjusted SMV Report.png)
+![Adjusted Report](Reports/Adjusted SMV Report.png)
   
-Extending the window dropped the accuracy to 49% unfortunately. So this does not seem to have helped the algorithm.
+Extending the window dropped the accuracy to 49% unfortunately. So this does not seem to have helped the algorithm, though the precision did improve.
 
-![Baseline Plot](Plots/SMV Plot Adjusted.png) 
+![Adjusted Plot](Plots/SMV Plot Adjusted.png) 
 
-Viewing this plot we can see how the algorithm performed when tested against the actual returns. It stays about the same for a good portion, but does begin to out perform the actual returns, showing that it does possess potential to make money.
+Upon checking the plot though, we can see that it did not perform well at all and took a bit of time to recover. It does end in the positive, but it took it a while to get there. It does appear that it did it's best recovery when the market went down, which might mean this strategy can be used to mitigate risk for when the market might be sloping downward.
+
+* AdaBoost Algorithm
+For the last one, a new classifier was used. It is always good to test new machine learning models as some of them may utilize new methods that can optimize performance.
+
+![AdaBoost Report](Reports/AdaBoost Report.png)
+  
+Though this one shows the same accuracy at 55%, you can see some minor improvements in precision.
+
+![AdaBoost Plot](Plots/AdaBoost Plot.png) 
+
+Viewing this plot, we can see that at first this model did about the same as the baseline, but at the end it appears that the returns it finishes with are a little better than the baseline. Though we can also see that when the market was having a little volatility it started to underperform the baseline.
   
 ## Summary
 
+From the above data, it would appear that the baseline works well in a general sense, but that we also have two additional optional models we can use if the market is taking a swing down or up. During a downward move, it appears the Adjusted Model reads those signals better and can make a profit from these conditions. While the AdaBoost model appears to fully take advantage of a market moving upwards.
 
-From the above data, we can conclude that the Oversampling allowed the model to better predict if a loan was going to default or not. The Oversampling increased the Accuraccy and the Recall significantly. We noticed a slight loss in precision, but that is normal. A fundamental tension exists between the precision and the recall, so it depends on which of these factors we wish to be more correct.
-
-This will fully depend on what we are trying to achieve here, if we are trying to minimize offering loans to those that might potentially default, then the Oversampling Model appears to offer us a much better option. If we are just trying to lend out the money without worrying too much about defaults (as they are a low occurance at 3.33%), then we can be happy with just the LR Model. Overall, both Models do a great job at having over 95% accuracy and above 90% Recall.
-
-As I feel that we are attempting to reduce our Defaults, I would suggest that we use the Oversampling Model to reduce that possibility.
+In these instances, watching the market and possibly switching models on accounts based on the direction the market is moving with the investment portfolios could result in less loss and more gains overall.
