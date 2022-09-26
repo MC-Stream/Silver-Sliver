@@ -12,7 +12,7 @@ We will be comparing the baseline algorithm with a modification to this algorith
 
 * Baseline Algorithm
   
-![Baseline Report](Reports/Original-SMV-Report.png)
+![Baseline Report](Reports/Original-SVM-Report.png)
   
 As we can see, the original has an accuracy of about 55%. This is not bad, but could possibly be improved on.
 
@@ -23,7 +23,7 @@ Viewing this plot we can see how the algorithm performed when tested against the
 * Adjusted Algorithm
 For this one, the SMA was moved to 50 and 200 days to see if more data might perform better. With the increased SMAs the training data was increased to see how this would play out over a longer time period.
 
-   ![Adjusted Report](Reports/Adjusted-SMV-Report.png)
+   ![Adjusted Report](Reports/Adjusted-SVM-Report.png)
   
 Extending the window dropped the accuracy to 49% unfortunately. So this does not seem to have helped the algorithm, though the precision did improve.
 
