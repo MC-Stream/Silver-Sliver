@@ -60,6 +60,17 @@ Ganache account use documentation:
 ![Ganache Account](Images/Balance.png)
 ![Transaction Log](Images/Ganache.png)
 
+---
+#### Before Transaction Balance
+![Before Transactoin](Images/BeforeTrans.png)
+
+#### Transaction Conducted
+![Transaction](Images/Transaction.png)
+
+#### After Transaction Balance
+![After Transaction](Images/AfterTrans.png)
+
+
 Please let us know if you have any further questions.
 
 ---
